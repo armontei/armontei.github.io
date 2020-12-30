@@ -2,7 +2,9 @@ const projects = [
     {
         "title": "Wes Bos 30 Day JS Challenge",
         "projectUrl": "",
-        "imageUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "codeUrl": "",
         "type": [
             "HTML",
             "CSS",
@@ -12,7 +14,9 @@ const projects = [
     {
         "title": "Meme in a Giffy",
         "projectUrl": "",
-        "imageUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "codeUrl": "",
         "type": [
             "HTML",
             "CSS",
@@ -26,7 +30,9 @@ const projects = [
     {
         "title": "I Dream of Cleannie",
         "projectUrl": "",
-        "imageUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "codeUrl": "",
         "type": [
             "HTML",
             "CSS",
@@ -38,7 +44,9 @@ const projects = [
     {
         "title": "Worldly Recipes",
         "projectUrl": "",
-        "imageUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "codeUrl": "",
         "type": [
             "HTML",
             "CSS",
@@ -51,7 +59,9 @@ const projects = [
     {
         "title": "A Moment of Calm",
         "projectUrl": "",
-        "imageUrl": "",
+        "videoUrl": "./assets/AMomentofCalm-Project3.mp4",
+        "liveUrl": "",
+        "codeUrl": "",
         "type": [
             "HTML",
             "CSS",
@@ -63,25 +73,40 @@ const projects = [
     {
         "title": "The Restaurant Mall",
         "projectUrl": "",
-        "imageUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "codeUrl": "",
         "type": [
             "HTML",
             "CSS",
             "SCSS",
         ]
     },
+    {
+        "title": "Animal Refuge",
+        "projectUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "codeUrl": "",
+        "type": [
+            "HTML",
+            "CSS"
+        ]
+    },
 ];
 
 let filteredProjects = projects;
 
-function filterProjects(event) {
+function filterProjects(e) {
 
     document.querySelector('ul').innerHTML = ""; // clear out previous results
 
-    let selectedType = event.target.value;
+    let selectedType = e.target.value;
 
     filteredProjects = projects.filter(item => item.type.indexOf(selectedType) > -1);
     console.log(filteredProjects);
+
+    document.querySelector('span').innerHTML = `${selectedType}`;
 
     displayProjects();
 }
@@ -93,19 +118,25 @@ function displayProjects() {
         document.querySelector('ul').insertAdjacentHTML("beforeend",
             `<li>
             <h3>${project.title}</h3>
-            <img src=${project.imgUrl} alt=""/>
             <p>${projectType}</p>
+            <video width="320" height="240" loop muted>
+                <source src=${project.videoUrl} type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <a href=${project.liveUrl} class="btn">View Website</a>
+            <a href=${project.codeUrl} class="btn">View Code</a>
             </li>`
         );
     });
+
+    let videos = document.querySelectorAll('video');
+    videos.forEach(video => video.addEventListener('mouseover', () => video.play()));
+    videos.forEach(video => video.addEventListener('mouseout', () => video.pause()));
 }
 
 displayProjects();
 
 document.querySelector('#type').addEventListener('change', filterProjects);
-
-
-
 
 
 

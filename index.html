@@ -9,13 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="wrapper">
         <h1>Amanda Monteiro's GitHub Directory</h1>
     </header>
-    <main>
-        <h2><span>All</span> Projects</h2>
+    <main class="wrapper">
         <form>
-            <label for="type">Filter by type</label>
+            <label for="type">Only view projects with:</label>
             <select name="type" id="type">
                 <option value="HTML">HTML</option>
                 <option value="CSS">CSS</option>
@@ -25,20 +24,17 @@
                 <option value="Mob Programming">Mob Programming</option>
             </select>
         </form>
-        <div class="projectContainer">
-            <ul>
-                <!-- li -->
-                    <!-- h2 -->
-                    <!-- img -->
-                    <!-- languages -->
-                <!-- /li -->
-            </ul>
-        </div>
+
+        <h2><span>All</span> Projects</h2>
+        
+        <ul class="projectContainer">
+            <!-- <li> dynamically generated -->
+        </ul>
     </main>
-    <footer>
+    <footer class="wrapper">
         Built by Amanda Monteiro
     </footer>
-
+    
     <script src="./script.js"></script>
 </body>
 </html>
