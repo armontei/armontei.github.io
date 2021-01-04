@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amanda Monteiro GitHub Directory</title>
     <link rel="stylesheet" href="./styles.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" as="style" href="$CSS&display=swap" />
+    <link rel="stylesheet" href="$CSS&display=swap" media="print" onload="this.media='all'" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
     <header class="wrapper">
-        <h1>Amanda Monteiro's GitHub Directory</h1>
+        <h1>Amanda's GitHub Directory</h1>
     </header>
+
     <main class="wrapper">
         <form>
             <label for="type">Only view projects with:</label>
@@ -19,7 +25,11 @@
                 <option value="HTML">HTML</option>
                 <option value="CSS">CSS</option>
                 <option value="SCSS">SCSS</option>
+                <option value="Vanilla JavaScript">Vanilla JavaScript</option>
                 <option value="jQuery">jQuery</option>
+                <option value="React">React</option>
+                <option value="Firebase">Firebase</option>
+                <option value="Rest API">Rest API</option>
                 <option value="Pair Programming">Pair Programming</option>
                 <option value="Mob Programming">Mob Programming</option>
             </select>
@@ -31,7 +41,8 @@
             <!-- <li> dynamically generated -->
         </ul>
     </main>
-    <footer class="wrapper">
+
+    <footer>
         Built by Amanda Monteiro
     </footer>
     
