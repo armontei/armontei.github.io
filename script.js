@@ -146,11 +146,22 @@ function displayProjects() {
     });
 
     let videos = document.querySelectorAll('video');
+
     videos.forEach(video => video.addEventListener('mouseover', () => video.play()));
     videos.forEach(video => video.addEventListener('mouseout', () => video.pause()));
+
+    videos.forEach(video => video.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }));
 }
 
 displayProjects();
+
+
 
 document.querySelector('#type').addEventListener('change', filterProjects);
 
