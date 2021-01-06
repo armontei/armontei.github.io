@@ -1,10 +1,10 @@
 const projects = [
     {
         "title": "Wes Bos 30 Day JS Challenge",
-        "videoUrl": "",
+        "videoUrl": "./assets/WesBosJSChallenge.mp4",
         "liveUrl": "https://armontei.github.io/WesBosVanillaJSChallenge/",
         "codeUrl": "https://github.com/armontei/WesBosVanillaJSChallenge",
-        "description": "A series of projects by Wes Bos designed to help people learn more vanilla JavaScript.",
+        "description": "A collection of projects by Wes Bos designed to help people learn more vanilla JavaScript methods.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -14,10 +14,10 @@ const projects = [
     },
     {
         "title": "Personal Portfolio",
-        "videoUrl": "",
+        "videoUrl": "./assets/PersonalPortfolio.mp4",
         "liveUrl": "https://amandamonteiro.ca/",
         "codeUrl": "https://github.com/armontei/personal-portfolio",
-        "description": "A website I designed to showcase some of my work, skills, and provide contact details.",
+        "description": "Showcases some of my work, skills, and provides contact details. Lighthouse score of 100% for Accessibility, Best Practices, and SEO.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -27,10 +27,10 @@ const projects = [
     },
     {
         "title": "Meme in a Giffy",
-        "videoUrl": "",
+        "videoUrl": "./assets/MemeInAGiffy.mp4",
         "liveUrl": "https://project6bootcamp.github.io/project6AmandaHansChristianBenZahra/",
         "codeUrl": "https://github.com/armontei/project6AmandaHansChristianBenZahra",
-        "description": "Agency style group project where users can create memes using the Giphy API.",
+        "description": "Agency style group project where users can create, search through, and upvote memes using the Giphy API.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -46,7 +46,7 @@ const projects = [
         "videoUrl": "./assets/Cleannie-Project5.mp4",
         "liveUrl": "https://armontei.github.io/amanda-monteiro-project-5/",
         "codeUrl": "https://github.com/armontei/amanda-monteiro-project-5",
-        "description": "Users can add tasks to a room and",
+        "description": "Users can add tasks to a room and mark them off as complete or delete them. A random task can be suggested through a button.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -57,10 +57,10 @@ const projects = [
     },
     {
         "title": "Worldly Recipes",
-        "videoUrl": "",
+        "videoUrl": "./assets/WorldlyRecipes-Project4.mp4",
         "liveUrl": "https://armontei.github.io/amanda-monteiro-hans-christian-project-4/",
         "codeUrl": "https://github.com/armontei/amanda-monteiro-hans-christian-project-4",
-        "description": "",
+        "description": "Type and a food item or dish name to see a list of recipes generated with the Meal Lab API. Filter those recipes by their country of origin.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -75,7 +75,7 @@ const projects = [
         "videoUrl": "./assets/AMomentofCalm-Project3.mp4",
         "liveUrl": "https://armontei.github.io/amanda-monteiro-project-3/",
         "codeUrl": "https://github.com/armontei/amanda-monteiro-project-3",
-        "description": "",
+        "description": "Click buttons to change the theme, audio, and meditation timer. Or have them chosen at random. Animation will play to help guide your breathing.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -85,10 +85,10 @@ const projects = [
     },
     {
         "title": "The Restaurant Mall",
-        "videoUrl": "",
+        "videoUrl": "./assets/RestaurantMall-Project2.mp4",
         "liveUrl": "https://armontei.github.io/amanda-monteiro-project-2/",
         "codeUrl": "https://github.com/armontei/amanda-monteiro-project-2",
-        "description": "",
+        "description": "Multi-page PSD Conversion. First time using SCSS and mixins.",
         "detailedInfo": "",
         "type": [
             "HTML",
@@ -97,11 +97,11 @@ const projects = [
     },
     {
         "title": "Animal Refuge",
-        "videoUrl": "",
+        "videoUrl": "./assets/AnimalRefuge-Project1.mp4",
         "liveUrl": "https://armontei.github.io/amanda-monteiro-project-1/",
         "codeUrl": "https://github.com/armontei/amanda-monteiro-project-1",
-        "description": "",
-        "detailedInfo": "This was my first bootcamp project. The challenge was not using flexbox and instead only using floats. Even though floats could be considered outdated, it was important to learn how to work with floats in case we ended up working at a company that still used them or had previous code written using floats.",
+        "description": "PSD Coversion with the challenge being to only use floats, no flexbox or grids allowed.",
+        "detailedInfo": "",
         "type": [
             "HTML",
             "CSS"
@@ -131,7 +131,7 @@ function displayProjects() {
     filteredProjects.map((project) => {
         let projectType = project.type.join(', ');
         projectContainer.insertAdjacentHTML("beforeend",
-            `<li class="projectBox">
+            `<li class="projectCard">
             <h3>${project.title}</h3>
             <p class="proType">${projectType}</p>
             <video loop muted>
@@ -139,9 +139,8 @@ function displayProjects() {
                 Your browser does not support the video tag.
             </video>
             <p class="proDescription">${project.description}</p>
-            <a href=${project.liveUrl} class="btn" target="_blank">Website</a>
-            <a href=${project.codeUrl} class="btn" target="_blank">Code</a>
-            <p class="proDetailed">${project.detailedInfo}</p>
+            <a href=${project.liveUrl} class="btn" target="_blank" rel="noopener noreferrer">Website</a>
+            <a href=${project.codeUrl} class="btn" target="_blank" rel="noopener noreferrer">Code</a>
             </li>`
         );
     });

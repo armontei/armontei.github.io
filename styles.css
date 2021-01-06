@@ -11,8 +11,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 *{padding: 0; margin: 0;}html{font-size: 62.5%;}.wrapper{max-width: 1280px; width: 95%; margin: 0 auto;}ul{list-style: none;}a{text-decoration: none; color: inherit}img{width: 100%; height: auto; display: block;}button{cursor:pointer}h1{margin:0}
 
 :root {
-    --main-font: 'Raleway', sans-serif;
     --heading-font: 'Shadows Into Light', cursive;
+    --main-font: 'Raleway', sans-serif;
+    --main-color: #274846
 }
 
 html {
@@ -35,9 +36,8 @@ body {
 }
 
 main {
-    flex: 1 0 auto;
+    flex: 1 0 auto; /* to keep footer at the bottom */
 }
-
 
 h1 {
     font-size: 5.5rem;
@@ -61,11 +61,14 @@ h2 {
     gap: 20px;
 }
 
-.projectBox {
-    text-align: center;
+.projectCard {
     padding: 15px;
     background-color: rgba(255,255,255, 0.9);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 h3 {
@@ -75,10 +78,12 @@ h3 {
 
 .proType {
     font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .proDescription {
-    margin-bottom: 25px;
+    margin: 20px 0;
 }
 
 .proDetailed {
@@ -87,12 +92,14 @@ h3 {
 }
 
 .btn {
-    background-color: black;
+    text-align: center;
+    width: 30rem;
+    margin: 0 auto 10px;
+    background-color:var(--main-color);
     border-radius: 10px;
     color: white;
     padding: 8px;
-    margin-bottom: 15px;
-    border: 2px solid black;
+    border: 2px solid var(--main-color);
 }
 
 .btn:hover {
@@ -113,8 +120,15 @@ footer {
     padding: 10px 0;
 }
 
+@media (max-width: 420px) {
+    .projectContainer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 
-
+    .btn {
+        width: 15rem;
+    }
+}
 
 
 
